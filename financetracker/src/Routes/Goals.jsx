@@ -1,6 +1,6 @@
 import React from "react";
 
-const Goals = () => {
+function Goals() {
   const containerStyle = {
     display: "flex",
     width: "100vw", // Use the full viewport width
