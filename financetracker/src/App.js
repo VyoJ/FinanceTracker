@@ -4,6 +4,7 @@ import Home from "./Routes/Home";
 import About from "./Routes/About";
 import Login from "./Routes/Login";
 import SignUp from "./Routes/SignUp"
+import Transactions from "./Routes/Transactions";
 import Layout from "./Components/Layout";
 
 function App() {
@@ -39,6 +40,14 @@ function App() {
           element={
             <Layout>
               <SignUp />
+            </Layout>
+          }
+        />
+        <Route
+          path="/Transactions"
+          element={
+            <Layout>
+              <Transactions />
             </Layout>
           }
         />
