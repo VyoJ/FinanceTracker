@@ -6,6 +6,7 @@ import Login from "./Routes/Login";
 import SignUp from "./Routes/SignUp"
 import Transactions from "./Routes/Transactions";
 import Layout from "./Components/Layout";
+import Goals from "./Routes/Goals";
 
 function App() {
   return (
@@ -40,6 +41,14 @@ function App() {
           element={
             <Layout>
               <SignUp />
+            </Layout>
+          }
+        />
+        <Route
+          path="/Goals"
+          element={
+            <Layout>
+              <Goals />
             </Layout>
           }
         />
