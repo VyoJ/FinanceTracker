@@ -4,6 +4,7 @@ require("dotenv").config();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const userRoutes = require("./routes/userRoutes");
+const txnRoutes = require("./routes/transactionRoutes");
 
 const app = express();
 const PORT = 2000;
@@ -30,4 +31,5 @@ app.use(
 
 app.use(bodyParser.json());
 app.use("/api", userRoutes);
+app.use("/api", txnRoutes);
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

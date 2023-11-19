@@ -7,6 +7,7 @@ import SignUp from "./Routes/SignUp"
 import Transactions from "./Routes/Transactions";
 import Layout from "./Components/Layout";
 import Goals from "./Routes/Goals";
+import Dashboard from "./Routes/Dashboard";
 
 function App() {
   return (
@@ -57,6 +58,14 @@ function App() {
           element={
             <Layout>
               <Transactions />
+            </Layout>
+          }
+        />
+        <Route
+          path="/Dashboard"
+          element={
+            <Layout>
+              <Dashboard/>
             </Layout>
           }
         />

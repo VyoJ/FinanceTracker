@@ -24,6 +24,8 @@ router.post("/signup", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
+    console.log(req)
+    console.log("Logging in")
     let getUser = await User.findOne({ email: req.body.email });
     console.log(getUser);
     if (!getUser) {
