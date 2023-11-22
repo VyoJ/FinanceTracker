@@ -3,6 +3,17 @@ const router = express.Router();
 const Transaction = require("../models/transactionSchema");
 const ObjectId = require("mongoose").Types.ObjectId;
 
+router.get("/view", async (req, res) => {
+  try {
+    let txns = await Transaction.find({});
+    console.log(txns);
+    return res.status(200).send(txns);
+  } catch (error) {
+    console.log(error);
+    return res.status(400).send("Could not get transactions");
+  }
+});
+
 router.post("/create", async (req, res) => {
   let transaction = new Transaction({
     user: req.body.user,
