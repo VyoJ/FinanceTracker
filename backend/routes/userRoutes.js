@@ -16,7 +16,7 @@ router.post("/signup", async (req, res) => {
     const token = jwt.sign({ userId: savedUser._id }, "my-secret-key");
     res
       .status(200)
-      .send({ token, userId: savedUser._id, email: savedUser.email });
+      .send({ token, userId: savedUser._id, email: savedUser.email, name: savedUser.name });
   } catch (error) {
     return res.status(401).send("Invalid email or password");
   }
@@ -34,7 +34,7 @@ router.post("/login", async (req, res) => {
     const result = await bcrypt.compare(req.body.password, getUser.password);
     if (result) {
       const token = jwt.sign({ userId: getUser._id }, "my-secret-key");
-      res.json({ token, userId: getUser._id, email: getUser.email });
+      res.json({ token, userId: getUser._id, email: getUser.email, name: getUser.name });
     } else {
       res.status(400).json({ error: "Invalid email or password" });
     }

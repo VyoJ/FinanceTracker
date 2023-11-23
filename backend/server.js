@@ -5,6 +5,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const userRoutes = require("./routes/userRoutes");
 const txnRoutes = require("./routes/transactionRoutes");
+const goalRoutes = require("./routes/goalRoutes")
 
 const app = express();
 const PORT = 2000;
@@ -30,6 +31,7 @@ app.use(
 );
 
 app.use(bodyParser.json());
-app.use("/api", userRoutes);
-app.use("/api", txnRoutes);
+app.use("/auth", userRoutes);
+app.use("/transaction", txnRoutes);
+app.use("/goal", goalRoutes);
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
