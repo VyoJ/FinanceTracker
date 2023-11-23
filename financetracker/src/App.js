@@ -8,7 +8,7 @@ import Transactions from "./Routes/Transactions";
 import Layout from "./Components/Layout";
 import Goals from "./Routes/Goals";
 import Dashboard from "./Routes/Dashboard";
-import Transactionlist from "./Routes/transactionlist";
+import AddTransaction from "./Routes/AddTransaction";
 
 function App() {
   return (
@@ -70,7 +70,7 @@ function App() {
             </Layout>
           }
         />
-        <Route path="/Transactions2" element={<Transactionlist />} />
+        <Route path="/AddTransaction" element={<AddTransaction />} />
       </Routes>
     </BrowserRouter>
   );
